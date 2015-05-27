@@ -21,7 +21,7 @@ module srubki()
 
 module srubki2()
 {
-    translate([0,38.38+2.15,0])
+    translate([0,37.38+2.15,0])
     {
         srubki();
 
@@ -46,8 +46,22 @@ module zabki()
     }
 }
 
+module skosy()
+{
+    translate([0,130,27])
+        rotate([-15,0,0])
+            cube([110.9,50,10]);
+
+
+    translate([0,130,-20])
+        rotate([15,0,0])
+            cube([110.9,50,10]);
+
+}
+
 //srubki2();
 //zabki();
+//skosy();
 
 difference()
 {
@@ -58,16 +72,8 @@ difference()
 
     srubki2();
 
-    translate([0,130,27])
-        rotate([-15,0,0])
-            cube([110.9,50,10]);
-
-
-    translate([0,130,-20])
-        rotate([15,0,0])
-            cube([110.9,50,10]);
-
 
     zabki();
 
+    skosy();
 }
