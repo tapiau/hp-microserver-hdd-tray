@@ -53,8 +53,8 @@ difference()
 {
     cube([108.9,172,18.25]);
 
-    translate([3.07,0,-1])
-        cube([101.8,170,20]);
+    translate([3,0,-1])
+        cube([102,170,20]);
 
     srubki2();
 
