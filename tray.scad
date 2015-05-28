@@ -36,13 +36,15 @@ module zabki()
 {
     translate([106.7,172-9.4,3.6])
     {
-        cube([2.2,9.4,3]);
+        len=10;
+        
+        cube([2.2,len,3]);
         
         translate([0,0,2.42+2.36])
-            cube([2.2,9.4,3]);
+            cube([2.2,len,3]);
         
         translate([0,0,2.42+2.36*2+1.92])
-            cube([2.2,9.4,3]);
+            cube([2.2,len,3]);
     }
 }
 
@@ -60,7 +62,7 @@ module skosy()
 
 module podpora()
 {
-    cylinder(r1=2,r2=0.5,h=6);
+    cylinder(r1=3,r2=0.5,h=6);
 }
 
 module podpory()
@@ -73,6 +75,9 @@ module podpory()
                 podpora();
         }
     }
+    
+    translate([5,168,0])
+    cube([100,6,1]);
 }
 
 //srubki2();
