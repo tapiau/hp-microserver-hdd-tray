@@ -87,13 +87,15 @@ module podpory()
 
 difference()
 {
-    cube([108.9,172,18.25]);
+    cube([108.5,171,18]);
 
     translate([3,0,-1])
         cube([102,170,20]);
 
     translate([3,10,-4])
         cube([102,170,10]);
+    
+    cube([109,2.1,20]);
 
 
     srubki2();
