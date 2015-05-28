@@ -52,8 +52,7 @@ module skosy()
         rotate([-15,0,0])
             cube([110.9,50,10]);
 
-
-    translate([0,130,-20])
+    translate([0,132,-18])
         rotate([15,0,0])
             cube([110.9,50,10]);
 
