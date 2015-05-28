@@ -58,9 +58,27 @@ module skosy()
 
 }
 
+module podpora()
+{
+    cylinder(r1=2,r2=0.5,h=6);
+}
+
+module podpory()
+{
+    translate([0,171,0])
+    {
+        for(n=[10:10:100])
+        {
+            translate([n,0,0])
+                podpora();
+        }
+    }
+}
+
 //srubki2();
 //zabki();
 //skosy();
+
 
 difference()
 {
@@ -69,6 +87,10 @@ difference()
     translate([3,0,-1])
         cube([102,170,20]);
 
+    translate([3,10,-4])
+        cube([102,170,10]);
+
+
     srubki2();
 
 
@@ -76,3 +98,5 @@ difference()
 
     skosy();
 }
+
+podpory();
