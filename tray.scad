@@ -1,5 +1,6 @@
 $fn=40;
 
+use <latch.scad>;
 
 module srubki()
 {
@@ -85,24 +86,164 @@ module podpory()
 //skosy();
 
 
-difference()
+module ramka()
 {
-    cube([108.4,172,18]);
+    difference()
+    {
+        cube([108.4,172,18]);
 
-    translate([3,0,-1])
-        cube([102,170,20]);
+        translate([3,0,-1])
+            cube([102,170,20]);
 
-    translate([3,10,-4])
-        cube([102,170,10]);
+        translate([3,10,-4])
+            cube([102,170,10]);
 
-    cube([109,2.1,20]);
+        cube([109,2.1,20]);
 
-    srubki2();
+        srubki2();
 
+        zabki();
 
-    zabki();
-
-    skosy();
+        skosy();
+    }
+    podpory();
 }
 
-podpory();
+module przod()
+{
+    translate([0,18,0])
+        cube([109,2.1,20]);
+    
+    color("blue")
+        translate([96.2,8.2,-3.2])
+            cylinder(r=2.2,h=26.5);
+    
+    translate([94,8.2,0])
+        cube([4.8,10,20]);
+
+    for(i = [0 : 10.8 : 109])
+    {
+        translate([i+0.5,19,-3.2])
+            cylinder(h=3.2,r1=2,r2=1);
+    }
+    translate([0,17,-3.2])
+        cube([109,4,1]);
+
+
+    for(i = [0 : 10 : 50])
+    {
+        translate([i+32,3,-3.2])
+            cylinder(h=7.2,r1=2,r2=1);
+    }
+        translate([35,11,-3.2])
+            cylinder(h=7.2,r1=2,r2=1);
+
+    translate([32,0,-3.2])
+        cube([50,12,1]);
+
+}
+
+przod();
+
+translate([108,0,23.2])
+    rotate([0,90,90])
+        latch();
+
+translate([0,0,-2.2])
+{
+    translate([0,5,0])
+    {
+        translate([102,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([99,0,0])
+            cylinder(r=0.5,h=24);
+    }
+    translate([0,8,0])
+    {
+        translate([100,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([105,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([110,0,0])
+            cylinder(r=0.5,h=24);
+    }
+    translate([0,12,0])
+    {
+        translate([89,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([96,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([100,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([105,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([110,0,0])
+            cylinder(r=0.5,h=24);
+    }
+    translate([0,15,0])
+    {
+        translate([90,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([96,0,0])
+            cylinder(r=0.5,h=24);
+
+        translate([101,0,0])
+            cylinder(r=0.5,h=24);
+
+    }
+}
+
+translate([99,4,4])
+{
+    difference()
+    {
+        cube([11.5,12,1]);
+        
+        translate([5,0,0])
+            cube([8,3,1]);
+
+        translate([3,9,0])
+            cube([18,3,1]);
+    }
+}
+
+translate([99,4,9])
+{
+    difference()
+    {
+        cube([11.5,12,1]);
+        
+        translate([5,0,0])
+            cube([8,3,1]);
+
+        translate([3,9,0])
+            cube([18,3,1]);
+    }
+}
+
+translate([99,4,15])
+{
+    difference()
+    {
+        cube([11.5,12,1]);
+        
+        translate([5,0,0])
+            cube([8,3,1]);
+
+        translate([3,9,0])
+            cube([18,3,1]);
+    }
+}
+
+translate([89.5,12,1])
+    rotate([0,0,70])
+        cube([3,1,18]);
+

@@ -64,7 +64,7 @@ module l1()
                 
                 translate([0,60.5,0])
                     rotate([10,0,0])
-                        cube([12,7,20]);
+                        cube([12,7,14]);
             }
             
             
@@ -77,23 +77,28 @@ module l1()
     }
 }
 
-difference()
+module latch()
 {
-    union()
+    difference()
     {
-        color("red")
-            cube([26.5,21.2,3.6]);
-
-        l1();
-        
-        translate([0,4.46,0])
+        union()
         {
-            b1();
-            translate([26.5-3,0,0])
+            color("red")
+                cube([26.5,21.2,3.6]);
+
+            l1();
+            
+            translate([0,4.46,0])
+            {
                 b1();
+                translate([26.5-3,0,0])
+                    b1();
+            }
         }
+        translate([0,11.74,8.3])
+            rotate([0,90,0])
+                cylinder(r=2.55,h=26.5);
     }
-    translate([0,11.74,8.3])
-        rotate([0,90,0])
-            cylinder(r=2.55,h=26.5);
 }
+
+//latch();
