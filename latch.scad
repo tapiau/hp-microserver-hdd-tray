@@ -71,14 +71,19 @@ module l1()
             translate([0,67.5,-3])
                 rotate([10,0,0])
                     cube([12,4,25]);
+            
             translate([0,64,0])
-                cube([12,3.5,1.8]);
+                cube([12,3.5,2.2]);
         }
+
+
     }
 }
 
 module latch()
 {
+translate([108,0,23.2])
+    rotate([0,90,90])
     difference()
     {
         union()
@@ -99,6 +104,117 @@ module latch()
             rotate([0,90,0])
                 cylinder(r=2.55,h=26.5);
     }
+
+translate([25,0,4])
+    union()
+    {
+        cube([3,20,12]);
+        cube([6,2,12]);
+    }
+
 }
 
-//latch();
+module latch_internal_support()
+{
+    translate([0,0,-2.2])
+    {
+        translate([0,5,0])
+        {
+            translate([102,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([99,0,0])
+                cylinder(r=0.5,h=24);
+        }
+        translate([0,8,0])
+        {
+            translate([100,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([105,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([110,0,0])
+                cylinder(r=0.5,h=24);
+        }
+        translate([0,12,0])
+        {
+            translate([89,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([96,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([100,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([105,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([110,0,0])
+                cylinder(r=0.5,h=24);
+        }
+        translate([0,15,0])
+        {
+            translate([90,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([96,0,0])
+                cylinder(r=0.5,h=24);
+
+            translate([101,0,0])
+                cylinder(r=0.5,h=24);
+
+        }
+    }
+    translate([99,4,4])
+    {
+        difference()
+        {
+            cube([11.5,12,1]);
+            
+            translate([5,0,0])
+                cube([8,3,1]);
+
+            translate([3,9,0])
+                cube([18,3,1]);
+        }
+    }
+
+    translate([99,4,9])
+    {
+        difference()
+        {
+            cube([11.5,12,1]);
+            
+            translate([5,0,0])
+                cube([8,3,1]);
+
+            translate([3,9,0])
+                cube([18,3,1]);
+        }
+    }
+
+    translate([99,4,15])
+    {
+        difference()
+        {
+            cube([11.5,12,1]);
+            
+            translate([5,0,0])
+                cube([8,3,1]);
+
+            translate([3,9,0])
+                cube([18,3,1]);
+        }
+    }
+
+    translate([89.5,12,1])
+        rotate([0,0,70])
+            cube([3,1,18]);
+
+    
+}
+
+
+latch();
