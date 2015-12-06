@@ -80,9 +80,14 @@ module l1()
     }
 }
 
-module latch()
+module latch(width)
 {
-translate([108,0,23.2])
+    
+    echo("AAAAAAAAA");
+    
+    echo(width);
+    
+translate([width-0.4,0,23.2])
     rotate([0,90,90])
     difference()
     {
@@ -215,6 +220,3 @@ module latch_internal_support()
 
     
 }
-
-
-latch();

@@ -1,37 +1,37 @@
-module srubki()
+module srubki(width)
 {
     translate([-1,0,5.8-2.15])
         rotate([0,90,0])
-            cylinder(r=2.1,h=111);
+            cylinder(r=2.1,h=width+4);
 
     translate([0,0,5.8-2.15])
     {
         rotate([0,90,0])
             cylinder(r=4,h=1.7);
 
-        translate([108.9-2.5,0,0])
+        translate([width-2,0,0])
             rotate([0,90,0])
                 cylinder(r=4,h=2.5);
     }
 
 }
 
-module srubki2()
+module srubki2(width)
 {
     translate([0,37.38+2.15,0])
     {
-        srubki();
+        srubki(width);
 
         translate([0,101.8,0])
         {
-            srubki();
+            srubki(width);
         }
     }
 }
 
-module zabki()
+module zabki(width)
 {
-    translate([106.7,172-9.4,3.6])
+    translate([width-1.7,172-9.4,3.6])
     {
         len=10;
         
@@ -45,15 +45,15 @@ module zabki()
     }
 }
 
-module skosy()
+module skosy(width)
 {
     translate([0,130,27])
         rotate([-15,0,0])
-            cube([110.9,50,10]);
+            cube([width+2,50,10]);
 
     translate([0,132,-18])
         rotate([15,0,0])
-            cube([110.9,50,10]);
+            cube([width+2,50,10]);
 
 }
 
@@ -77,26 +77,26 @@ module frame_support()
     cube([100,6,1]);
 }
 
-module frame()
+module frame(width)
 {
     difference()
     {
         translate([0,20,0])
-            cube([108.4,152,18]);
+            cube([width,152,18]);
 
         translate([3,0,-1])
-            cube([102,170,20]);
+            cube([width-6.4,170,20]);
 
         translate([3,10,-4])
-            cube([102,170,10]);
+            cube([width-6.4,170,10]);
 
-        cube([109,2.1,20]);
+        cube([width+.2,2.1,20]);
 
-        srubki2();
+        srubki2(width);
 
-        zabki();
+        zabki(width);
 
-        skosy();
+        skosy(width);
     }
 //    frame_support();
 }
