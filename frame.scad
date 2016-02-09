@@ -104,5 +104,5 @@ module frame(width)
 //srubki2();
 //zabki();
 //skosy();
-frame();
+//frame();
 

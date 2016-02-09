@@ -18,4 +18,4 @@ module front(width)
 //        latch();
 //latch_internal_support();
 
-//front(108.4);
+front(108.4);
