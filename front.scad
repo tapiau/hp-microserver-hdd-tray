@@ -6,8 +6,8 @@ module front(width)
         cube([width,2.1,20]);
     
 //    color("blue")
-        translate([width-12.2,8.2,-3.2])
-            cylinder(r=2.2,h=26.5);
+    translate([width-12.2,8.2,-3.2])
+        cylinder(r=2.2,h=26.5);
     
     translate([width-14.4,8.2,0])
         cube([4.8,10,20]);

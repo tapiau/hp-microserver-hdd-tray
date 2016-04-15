@@ -79,10 +79,11 @@ module frame_support()
 
 module frame(width)
 {
+    translate([0,-3,0])
     difference()
     {
-        translate([0,20,0])
-            cube([width,152,18]);
+        translate([0,23,0])
+            cube([width,149,18]);
 
         translate([3,0,-1])
             cube([width-6.4,170,20]);
@@ -98,8 +99,11 @@ module frame(width)
 
         skosy(width);
     }
+    
 //    frame_support();
 }
+
+frame(108.4);
 
 //srubki2();
 //zabki();
