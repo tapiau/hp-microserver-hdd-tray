@@ -4,17 +4,17 @@ module front(width)
 {
     translate([0,18,0])
         cube([width,2.1,20]);
-    
-//    color("blue")
-//    translate([width-12.2,8.2,-3.2])
-//        cylinder(r=2.2,h=26.5);
-    translate([width-12.2,8.2,0])
-        cylinder(r=2.2,h=20);
-    
+
     translate([width-14.4,8.2,0])
         cube([4.4,10,20]);
 
-    color("blue")
+// axle for latch    
+//    color("blue")
+//    translate([width-12.2,8.2,-3.2])
+//        cylinder(r=2.2,h=26.5);
+    
+
+// handle instead of latch
     translate([width-16.6,6,0])
         cube([8.8,4.4,20]);
 
