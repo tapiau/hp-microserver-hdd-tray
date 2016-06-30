@@ -64,17 +64,18 @@ module podpora()
 
 module frame_support()
 {
-    translate([0,171,0])
+    translate([0,168,0])
     {
         for(n=[10:10:100])
         {
             translate([n,0,0])
                 podpora();
         }
+
+        translate([5,-3,0])
+            cube([100,6,1]);
     }
-    
-    translate([5,168,0])
-    cube([100,6,1]);
+   
 }
 
 module frame(width)
@@ -103,7 +104,7 @@ module frame(width)
 //    frame_support();
 }
 
-frame(108.4);
+//frame(108.4);
 
 //srubki2();
 //zabki();
