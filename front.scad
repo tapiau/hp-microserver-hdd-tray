@@ -1,29 +1,35 @@
 $fn=40;
 
+module front_handle(width)
+{
+    translate([-width/2-3,0,0])
+    {
+        translate([0,6,0])
+            cube([width,4.4,20]);
+
+        translate([0,8.2,0])
+            cylinder(r=2.2,h=20);
+
+        translate([width,8.2,0])
+            cylinder(r=2.2,h=20);
+    }
+}
+
 module front(width)
 {
-    translate([0,18,0])
-        cube([width,2.1,20]);
+    translate([0,16,0])
+        cube([width,4.1,20]);
 
-    translate([width-14.4,8.2,0])
+    translate([width/2+10,8.2,0])
         cube([4.4,10,20]);
 
-// axle for latch    
-//    color("blue")
-//    translate([width-12.2,8.2,-3.2])
-//        cylinder(r=2.2,h=26.5);
-    
+    translate([width/2-10,8.2,0])
+        cube([4.4,10,20]);
 
-// handle instead of latch
-    translate([width-16.6,6,0])
-        cube([8.8,4.4,20]);
-
-    translate([width-16.6,8.2,0])
-        cylinder(r=2.2,h=20);
-
-    translate([width-7.8,8.2,0])
-        cylinder(r=2.2,h=20);
-
+    translate([width/2+5,0,0])
+    {
+        front_handle(34);
+    }
 }
 
 //translate([108,0,23.2])
