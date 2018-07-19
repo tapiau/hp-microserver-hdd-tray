@@ -10,5 +10,5 @@ use <frame.scad>;
 
 
 frame(width);
-front(widht);
-latch(widht);
+front(width);
+latch(width);
